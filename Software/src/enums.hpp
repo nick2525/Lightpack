@@ -83,6 +83,7 @@ namespace SupportedDevices
 {
 enum DeviceType {
     DeviceTypeLightpack,
+    DeviceTypePaintpack,
     DeviceTypeAlienFx,
     DeviceTypeAdalight,
     DeviceTypeVirtual,
@@ -103,6 +104,8 @@ enum Devices
     Ardulight   = 255,
     AlienFx     = 1,
     Virtual     = 255,
+
+    Paintpack   = 10,
 
     Lightpack4  = 8,
     Lightpack5  = 10,

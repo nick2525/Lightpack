@@ -28,6 +28,7 @@
 
 #include "LedDeviceManager.hpp"
 #include "LedDeviceLightpack.hpp"
+#include "LedDevicePaintpack.hpp"
 #include "LedDeviceAlienFx.hpp"
 #include "LedDeviceAdalight.hpp"
 #include "LedDeviceArdulight.hpp"
@@ -286,6 +287,10 @@ ILedDevice * LedDeviceManager::createLedDevice(SupportedDevices::DeviceType devi
     case SupportedDevices::DeviceTypeLightpack:
         DEBUG_LOW_LEVEL << Q_FUNC_INFO << "SupportedDevices::LightpackDevice";
         return (ILedDevice *)new LedDeviceLightpack();
+
+    case SupportedDevices::DeviceTypePaintpack:
+        DEBUG_LOW_LEVEL << Q_FUNC_INFO << "SupportedDevices::PaintpackDevice";
+        return (ILedDevice *)new LedDevicePaintpack();
 
     case SupportedDevices::DeviceTypeAlienFx:
         DEBUG_LOW_LEVEL << Q_FUNC_INFO << "SupportedDevices::AlienFxDevice";

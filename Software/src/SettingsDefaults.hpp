@@ -32,9 +32,9 @@
 #include "enums.hpp"
 
 #ifdef ALIEN_FX_SUPPORTED
-#   define SUPPORTED_DEVICES            "Lightpack,AlienFx,Adalight,Ardulight,Virtual"
+#   define SUPPORTED_DEVICES            "Lightpack,Paintpack,AlienFx,Adalight,Ardulight,Virtual"
 #else
-#   define SUPPORTED_DEVICES            "Lightpack,Adalight,Ardulight,Virtual"
+#   define SUPPORTED_DEVICES            "Lightpack,Paintpack,Adalight,Ardulight,Virtual"
 #endif
 
 #ifdef WINAPI_GRAB_SUPPORT
@@ -107,6 +107,10 @@ namespace AlienFx
 static const int NumberOfLedsDefault = 1;
 }
 namespace Lightpack
+{
+static const int NumberOfLedsDefault = 10;
+}
+namespace Paintpack
 {
 static const int NumberOfLedsDefault = 10;
 }

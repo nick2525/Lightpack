@@ -80,6 +80,13 @@ static const QString ColorSequence = "Adalight/ColorSequence";
 static const QString Port = "Adalight/SerialPort";
 static const QString BaudRate = "Adalight/BaudRate";
 }
+namespace Paintpack
+{
+static const QString NumberOfLeds = "Paintpack/NumberOfLeds";
+static const QString ColorSequence = "Paintpack/ColorSequence";
+static const QString Port = "Paintpack/SerialPort";
+static const QString BaudRate = "Paintpack/BaudRate";
+}
 namespace Ardulight
 {
 static const QString NumberOfLeds = "Ardulight/NumberOfLeds";
@@ -108,6 +115,7 @@ static const QString MainConfigVersion = MAIN_CONFIG_FILE_VERSION;
 namespace ConnectedDevice
 {
 static const QString LightpackDevice = "Lightpack";
+static const QString PaintpackDevice = "Paintpack";
 static const QString AlienFxDevice = "AlienFx";
 static const QString AdalightDevice = "Adalight";
 static const QString ArdulightDevice = "Ardulight";
@@ -252,6 +260,8 @@ void Settings::Initialize( const QString & applicationDirPath, bool isDebugLevel
     setNewOptionMain(Main::Key::AlienFx::NumberOfLeds,      Main::AlienFx::NumberOfLedsDefault);
     setNewOptionMain(Main::Key::Lightpack::NumberOfLeds,    Main::Lightpack::NumberOfLedsDefault);
     setNewOptionMain(Main::Key::Virtual::NumberOfLeds,      Main::Virtual::NumberOfLedsDefault);
+
+    setNewOptionMain(Main::Key::Paintpack::NumberOfLeds,    Main::Paintpack::NumberOfLedsDefault);
 
     if (isDebugLevelObtainedFromCmdArgs == false)
     {
@@ -607,7 +617,7 @@ QString Settings::getConnectedDeviceName()
 
 void Settings::setConnectedDeviceName(const QString & deviceName)
 {
-    DEBUG_LOW_LEVEL << Q_FUNC_INFO;
+    DEBUG_LOW_LEVEL << Q_FUNC_INFO << deviceName;
     if (deviceName == "")
         return; // silent return
 
@@ -744,6 +754,10 @@ void Settings::setNumberOfLeds(SupportedDevices::DeviceType device, int numberOf
         switch(device) {
             case DeviceTypeLightpack:
             m_this->lightpackNumberOfLedsChanged(numberOfLeds);
+            break;
+
+            case DeviceTypePaintpack:
+            m_this->paintpackNumberOfLedsChanged(numberOfLeds);
             break;
 
             case DeviceTypeAdalight:
@@ -1450,11 +1464,13 @@ void Settings::initDevicesMap()
     DEBUG_LOW_LEVEL << Q_FUNC_INFO;
 
     m_devicesTypeToNameMap[SupportedDevices::DeviceTypeAdalight]  = Main::Value::ConnectedDevice::AdalightDevice;
+    m_devicesTypeToNameMap[SupportedDevices::DeviceTypePaintpack]   = Main::Value::ConnectedDevice::PaintpackDevice;
     m_devicesTypeToNameMap[SupportedDevices::DeviceTypeArdulight] = Main::Value::ConnectedDevice::ArdulightDevice;
     m_devicesTypeToNameMap[SupportedDevices::DeviceTypeLightpack] = Main::Value::ConnectedDevice::LightpackDevice;
     m_devicesTypeToNameMap[SupportedDevices::DeviceTypeVirtual]   = Main::Value::ConnectedDevice::VirtualDevice;
 
     m_devicesTypeToKeyNumberOfLedsMap[SupportedDevices::DeviceTypeAdalight]  = Main::Key::Adalight::NumberOfLeds;
+    m_devicesTypeToKeyNumberOfLedsMap[SupportedDevices::DeviceTypePaintpack]  = Main::Key::Paintpack::NumberOfLeds;
     m_devicesTypeToKeyNumberOfLedsMap[SupportedDevices::DeviceTypeArdulight] = Main::Key::Ardulight::NumberOfLeds;
     m_devicesTypeToKeyNumberOfLedsMap[SupportedDevices::DeviceTypeLightpack] = Main::Key::Lightpack::NumberOfLeds;
     m_devicesTypeToKeyNumberOfLedsMap[SupportedDevices::DeviceTypeVirtual]   = Main::Key::Virtual::NumberOfLeds;

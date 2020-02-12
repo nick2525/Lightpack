@@ -219,6 +219,7 @@ signals:
     void ardulightSerialPortNameChanged(const QString & port);
     void ardulightSerialPortBaudRateChanged(const QString & baud);
     void lightpackNumberOfLedsChanged(int numberOfLeds);
+    void paintpackNumberOfLedsChanged(int numberOfLeds);
     void adalightNumberOfLedsChanged(int numberOfLeds);
     void ardulightNumberOfLedsChanged(int numberOfLeds);
     void virtualNumberOfLedsChanged(int numberOfLeds);

@@ -223,6 +223,7 @@ void SettingsWindow::connectSignalsSlots()
     connect(ui->comboBox_AdalightColorSequence, SIGNAL(currentIndexChanged(QString)), this, SLOT(onColorSequence_valueChanged(QString)));
     connect(ui->comboBox_ArdulightColorSequence, SIGNAL(currentIndexChanged(QString)), this, SLOT(onColorSequence_valueChanged(QString)));
     connect(ui->spinBox_LightpackNumberOfLeds, SIGNAL(valueChanged(int)), this, SLOT(onLightpackNumberOfLeds_valueChanged(int)));
+    connect(ui->spinBox_PaintpackNumberOfLeds, SIGNAL(valueChanged(int)), this, SLOT(onPaintpackNumberOfLeds_valueChanged(int)));
     connect(ui->spinBox_AdalightNumberOfLeds, SIGNAL(valueChanged(int)), this, SLOT(onAdalightNumberOfLeds_valueChanged(int)));
     connect(ui->spinBox_ArdulightNumberOfLeds, SIGNAL(valueChanged(int)), this, SLOT(onArdulightNumberOfLeds_valueChanged(int)));
     connect(ui->spinBox_VirtualNumberOfLeds, SIGNAL(valueChanged(int)), this, SLOT(onVirtualNumberOfLeds_valueChanged(int)));
@@ -414,6 +415,11 @@ void SettingsWindow::updateDeviceTabWidgetsVisibility()
     case SupportedDevices::DeviceTypeAdalight:
         ui->groupBox_DeviceSpecificSettings->show();
         ui->tabDevices->setCurrentWidget(ui->tabDeviceAdalight);
+        break;
+
+    case SupportedDevices::DeviceTypePaintpack:
+        ui->groupBox_DeviceSpecificSettings->show();
+        ui->tabDevices->setCurrentWidget(ui->tabDevicePaintpack);
         break;
 
     case SupportedDevices::DeviceTypeArdulight:
@@ -1149,6 +1155,13 @@ void SettingsWindow::onLightpackNumberOfLeds_valueChanged(int value)
 
 }
 
+void SettingsWindow::onPaintpackNumberOfLeds_valueChanged(int value)
+{
+    DEBUG_LOW_LEVEL << Q_FUNC_INFO << "PP" << value;
+
+    Settings::setNumberOfLeds(SupportedDevices::DeviceTypePaintpack, value);
+}
+
 void SettingsWindow::onAdalightNumberOfLeds_valueChanged(int value)
 {
     DEBUG_LOW_LEVEL << Q_FUNC_INFO << value;
@@ -1819,6 +1832,7 @@ void SettingsWindow::updateUiFromSettings()
     ui->horizontalSlider_MoodLampSpeed->setValue        (Settings::getMoodLampSpeed());
 
     ui->spinBox_LightpackNumberOfLeds->setValue         (Settings::getNumberOfLeds(SupportedDevices::DeviceTypeLightpack));
+    ui->spinBox_PaintpackNumberOfLeds->setValue         (Settings::getNumberOfLeds(SupportedDevices::DeviceTypePaintpack));
     ui->spinBox_AdalightNumberOfLeds->setValue          (Settings::getNumberOfLeds(SupportedDevices::DeviceTypeAdalight));
     ui->spinBox_ArdulightNumberOfLeds->setValue         (Settings::getNumberOfLeds(SupportedDevices::DeviceTypeArdulight));
     ui->spinBox_VirtualNumberOfLeds->setValue           (Settings::getNumberOfLeds(SupportedDevices::DeviceTypeVirtual));
@@ -2360,4 +2374,9 @@ void SettingsWindow::on_pushButton_GammaCorrectionHelp_clicked()
 void SettingsWindow::on_pushButton_lumosityThresholdHelp_clicked()
 {
     showHelpOf(ui->horizontalSlider_LuminosityThreshold);
+}
+
+void SettingsWindow::on_pushButton_PaintpackBootloader_clicked()
+{
+    emit intoBootloader();
 }

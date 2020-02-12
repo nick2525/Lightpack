@@ -147,6 +147,7 @@ private slots:
     void onDeviceColorDepth_valueChanged(int value);
     void onDeviceConnectedDevice_currentIndexChanged(QString value);
     void onLightpackNumberOfLeds_valueChanged(int value);
+    void onPaintpackNumberOfLeds_valueChanged(int value);
     void onAdalightNumberOfLeds_valueChanged(int value);
     void onArdulightNumberOfLeds_valueChanged(int value);
     void onVirtualNumberOfLeds_valueChanged(int value);
@@ -205,6 +206,8 @@ private slots:
     void on_pushButton_AllPluginsHelp_clicked();
 
     void on_pushButton_lumosityThresholdHelp_clicked();
+
+    void on_pushButton_PaintpackBootloader_clicked();
 
 private:
     void updateTrayAndActionStates();    

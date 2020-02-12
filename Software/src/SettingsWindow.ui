@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>608</width>
-    <height>599</height>
+    <width>619</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -243,7 +243,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tabSoftwareOptions">
        <property name="enabled">
@@ -836,12 +836,56 @@
         <property name="rightMargin">
          <number>20</number>
         </property>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Overall brightness:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QSpinBox" name="spinBox_DeviceBrightness">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
         <item row="2" column="0">
          <widget class="QComboBox" name="comboBox_ConnectedDevice">
           <property name="minimumSize">
            <size>
             <width>143</width>
-            <height>0</height>
+            <height>30</height>
            </size>
           </property>
           <property name="maximumSize">
@@ -849,6 +893,9 @@
             <width>143</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -887,19 +934,6 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_5">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Overall brightness:</string>
-          </property>
-         </widget>
-        </item>
         <item row="4" column="0">
          <widget class="QSlider" name="horizontalSlider_DeviceBrightness">
           <property name="minimum">
@@ -916,37 +950,6 @@
           </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QSpinBox" name="spinBox_DeviceBrightness">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>60</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="minimum">
-           <number>0</number>
-          </property>
-          <property name="maximum">
-           <number>100</number>
-          </property>
-          <property name="value">
-           <number>100</number>
           </property>
          </widget>
         </item>
@@ -997,37 +1000,6 @@
           </property>
          </widget>
         </item>
-        <item row="6" column="0">
-         <widget class="QSlider" name="horizontalSlider_GammaCorrection">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="whatsThis">
-           <string>&lt;h4&gt;Gamma correction&lt;/h4&gt; It controls the level of saturation. The effect is clearly detectable in a video in screen grabbing mode&lt;br/&gt;Recommended value: 2.00</string>
-          </property>
-          <property name="minimum">
-           <number>5</number>
-          </property>
-          <property name="maximum">
-           <number>1000</number>
-          </property>
-          <property name="singleStep">
-           <number>5</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="tickPosition">
-           <enum>QSlider::NoTicks</enum>
-          </property>
-          <property name="tickInterval">
-           <number>100</number>
-          </property>
-         </widget>
-        </item>
         <item row="10" column="0" colspan="3">
          <widget class="QGroupBox" name="groupBox_DeviceSpecificSettings">
           <property name="sizePolicy">
@@ -1070,7 +1042,7 @@
               </size>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <property name="documentMode">
               <bool>true</bool>
@@ -1092,8 +1064,48 @@
                <string>Lightpack</string>
               </attribute>
               <layout class="QGridLayout" name="gridLayout_13">
+               <item row="9" column="1">
+                <widget class="QSpinBox" name="spinBox_LightpackNumberOfLeds">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="minimum">
+                  <number>1</number>
+                 </property>
+                 <property name="maximum">
+                  <number>10</number>
+                 </property>
+                 <property name="value">
+                  <number>1</number>
+                 </property>
+                </widget>
+               </item>
                <item row="7" column="0">
                 <widget class="QSlider" name="horizontalSlider_DeviceRefreshDelay">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>25</height>
+                  </size>
+                 </property>
                  <property name="whatsThis">
                   <string>&lt;h4&gt;Refresh delay&lt;/h4&gt; This setting’s values are inversely proportional to the PWM’s frequency. It's affects to performance.</string>
                  </property>
@@ -1114,42 +1126,42 @@
                  </property>
                 </widget>
                </item>
-               <item row="9" column="1">
-                <widget class="QSpinBox" name="spinBox_LightpackNumberOfLeds">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
+               <item row="5" column="0">
+                <widget class="QSlider" name="horizontalSlider_DeviceSmooth">
                  <property name="minimumSize">
                   <size>
-                   <width>50</width>
-                   <height>0</height>
+                   <width>0</width>
+                   <height>25</height>
                   </size>
                  </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>60</width>
-                   <height>16777215</height>
-                  </size>
+                 <property name="whatsThis">
+                  <string>&lt;h4&gt;Smoothness&lt;/h4&gt; It defines how many steps will be color changed in</string>
                  </property>
                  <property name="minimum">
-                  <number>1</number>
+                  <number>0</number>
                  </property>
                  <property name="maximum">
-                  <number>10</number>
+                  <number>255</number>
+                 </property>
+                 <property name="pageStep">
+                  <number>1</number>
                  </property>
                  <property name="value">
-                  <number>1</number>
+                  <number>100</number>
+                 </property>
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
                  </property>
                 </widget>
                </item>
                <item row="3" column="0">
                 <widget class="QSlider" name="horizontalSlider_DeviceColorDepth">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>25</height>
+                  </size>
+                 </property>
                  <property name="whatsThis">
                   <string>&lt;h4&gt;Color depth&lt;/h4&gt; Number of colors per channel, one RGB LED uses 3 channels (value in power of 3).</string>
                  </property>
@@ -1178,6 +1190,12 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>25</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>Smoothness:</string>
                  </property>
@@ -1185,6 +1203,12 @@
                </item>
                <item row="9" column="0">
                 <widget class="QSlider" name="horizontalSlider_LightpackNumberOfLeds">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>25</height>
+                  </size>
+                 </property>
                  <property name="minimum">
                   <number>1</number>
                  </property>
@@ -1209,6 +1233,12 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>25</height>
+                  </size>
                  </property>
                  <property name="text">
                   <string>Refresh delay (Lightpack 5 and below):</string>
@@ -1236,61 +1266,14 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="text">
-                  <string>Number of LEDs:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QSpinBox" name="spinBox_DeviceColorDepth">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
                  <property name="minimumSize">
                   <size>
-                   <width>50</width>
-                   <height>0</height>
+                   <width>0</width>
+                   <height>25</height>
                   </size>
                  </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>60</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="minimum">
-                  <number>32</number>
-                 </property>
-                 <property name="maximum">
-                  <number>255</number>
-                 </property>
-                 <property name="value">
-                  <number>100</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QSlider" name="horizontalSlider_DeviceSmooth">
-                 <property name="whatsThis">
-                  <string>&lt;h4&gt;Smoothness&lt;/h4&gt; It defines how many steps will be color changed in</string>
-                 </property>
-                 <property name="minimum">
-                  <number>0</number>
-                 </property>
-                 <property name="maximum">
-                  <number>255</number>
-                 </property>
-                 <property name="pageStep">
-                  <number>1</number>
-                 </property>
-                 <property name="value">
-                  <number>100</number>
-                 </property>
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                 <property name="text">
+                  <string>Number of LEDs:</string>
                  </property>
                 </widget>
                </item>
@@ -1301,6 +1284,12 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>25</height>
+                  </size>
                  </property>
                  <property name="text">
                   <string>Color depth (Lightpack 5 and below):</string>
@@ -1318,7 +1307,7 @@
                  <property name="minimumSize">
                   <size>
                    <width>50</width>
-                   <height>0</height>
+                   <height>25</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -1349,7 +1338,7 @@
                  <property name="minimumSize">
                   <size>
                    <width>50</width>
-                   <height>0</height>
+                   <height>25</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -1377,6 +1366,12 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">margin:0px;</string>
                  </property>
@@ -1399,6 +1394,12 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">margin:0px;</string>
@@ -1423,6 +1424,12 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">margin:0px;</string>
                  </property>
@@ -1438,7 +1445,142 @@
                  </property>
                 </widget>
                </item>
+               <item row="3" column="1">
+                <widget class="QSpinBox" name="spinBox_DeviceColorDepth">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="minimum">
+                  <number>32</number>
+                 </property>
+                 <property name="maximum">
+                  <number>255</number>
+                 </property>
+                 <property name="value">
+                  <number>100</number>
+                 </property>
+                </widget>
+               </item>
               </layout>
+             </widget>
+             <widget class="QWidget" name="tabDevicePaintpack">
+              <attribute name="title">
+               <string>Paintpack</string>
+              </attribute>
+              <widget class="QWidget" name="gridLayoutWidget">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>401</width>
+                 <height>101</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_10">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_NumberOfLeds_2">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Number of LEDs:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QSpinBox" name="spinBox_PaintpackNumberOfLeds">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>50</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>60</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>10</number>
+                  </property>
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QSlider" name="horizontalSlider_PaintpackNumberOfLeds">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>10</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="tickPosition">
+                   <enum>QSlider::TicksAbove</enum>
+                  </property>
+                  <property name="tickInterval">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QPushButton" name="pushButton_PaintpackBootloader">
+                  <property name="text">
+                   <string>Put Paintpack to the bootloader mode</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <zorder>gridLayoutWidget</zorder>
+              <zorder>spinBox_PaintpackNumberOfLeds</zorder>
              </widget>
              <widget class="QWidget" name="tabDeviceAdalight">
               <attribute name="title">
@@ -1925,19 +2067,6 @@
           </layout>
          </widget>
         </item>
-        <item row="11" column="0">
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="6" column="2">
          <widget class="QPushButton" name="pushButton_GammaCorrectionHelp">
           <property name="sizePolicy">
@@ -1973,6 +2102,50 @@
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QSlider" name="horizontalSlider_GammaCorrection">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="whatsThis">
+           <string>&lt;h4&gt;Gamma correction&lt;/h4&gt; It controls the level of saturation. The effect is clearly detectable in a video in screen grabbing mode&lt;br/&gt;Recommended value: 2.00</string>
+          </property>
+          <property name="minimum">
+           <number>5</number>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="singleStep">
+           <number>5</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::NoTicks</enum>
+          </property>
+          <property name="tickInterval">
+           <number>100</number>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0" colspan="2">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
@@ -3369,12 +3542,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
-     <y>84</y>
+     <x>339</x>
+     <y>451</y>
     </hint>
     <hint type="destinationlabel">
-     <x>240</x>
-     <y>84</y>
+     <x>534</x>
+     <y>454</y>
     </hint>
    </hints>
   </connection>
@@ -3385,12 +3558,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>240</x>
-     <y>84</y>
+     <x>534</x>
+     <y>454</y>
     </hint>
     <hint type="destinationlabel">
-     <x>184</x>
-     <y>84</y>
+     <x>339</x>
+     <y>451</y>
     </hint>
    </hints>
   </connection>
@@ -3401,12 +3574,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
-     <y>75</y>
+     <x>339</x>
+     <y>403</y>
     </hint>
     <hint type="destinationlabel">
-     <x>240</x>
-     <y>75</y>
+     <x>534</x>
+     <y>406</y>
     </hint>
    </hints>
   </connection>
@@ -3417,12 +3590,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>240</x>
-     <y>75</y>
+     <x>534</x>
+     <y>406</y>
     </hint>
     <hint type="destinationlabel">
-     <x>184</x>
-     <y>75</y>
+     <x>339</x>
+     <y>403</y>
     </hint>
    </hints>
   </connection>
@@ -3433,12 +3606,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>233</x>
-     <y>46</y>
+     <x>551</x>
+     <y>156</y>
     </hint>
     <hint type="destinationlabel">
-     <x>167</x>
-     <y>46</y>
+     <x>307</x>
+     <y>154</y>
     </hint>
    </hints>
   </connection>
@@ -3449,12 +3622,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>167</x>
-     <y>46</y>
+     <x>307</x>
+     <y>154</y>
     </hint>
     <hint type="destinationlabel">
-     <x>233</x>
-     <y>46</y>
+     <x>551</x>
+     <y>156</y>
     </hint>
    </hints>
   </connection>
@@ -3465,12 +3638,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
-     <y>65</y>
+     <x>339</x>
+     <y>356</y>
     </hint>
     <hint type="destinationlabel">
-     <x>240</x>
-     <y>65</y>
+     <x>534</x>
+     <y>359</y>
     </hint>
    </hints>
   </connection>
@@ -3481,12 +3654,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>240</x>
-     <y>65</y>
+     <x>534</x>
+     <y>359</y>
     </hint>
     <hint type="destinationlabel">
-     <x>184</x>
-     <y>65</y>
+     <x>339</x>
+     <y>356</y>
     </hint>
    </hints>
   </connection>
@@ -3497,12 +3670,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
-     <y>93</y>
+     <x>339</x>
+     <y>501</y>
     </hint>
     <hint type="destinationlabel">
-     <x>240</x>
-     <y>93</y>
+     <x>534</x>
+     <y>501</y>
     </hint>
    </hints>
   </connection>
@@ -3513,12 +3686,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>240</x>
-     <y>93</y>
+     <x>534</x>
+     <y>501</y>
     </hint>
     <hint type="destinationlabel">
-     <x>184</x>
-     <y>93</y>
+     <x>339</x>
+     <y>501</y>
     </hint>
    </hints>
   </connection>
@@ -3529,12 +3702,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>195</x>
-     <y>79</y>
+     <x>350</x>
+     <y>491</y>
     </hint>
     <hint type="destinationlabel">
-     <x>257</x>
-     <y>79</y>
+     <x>566</x>
+     <y>488</y>
     </hint>
    </hints>
   </connection>
@@ -3545,12 +3718,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>79</y>
+     <x>566</x>
+     <y>488</y>
     </hint>
     <hint type="destinationlabel">
-     <x>195</x>
-     <y>79</y>
+     <x>350</x>
+     <y>491</y>
     </hint>
    </hints>
   </connection>
@@ -3561,12 +3734,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>195</x>
-     <y>79</y>
+     <x>350</x>
+     <y>492</y>
     </hint>
     <hint type="destinationlabel">
-     <x>257</x>
-     <y>79</y>
+     <x>566</x>
+     <y>489</y>
     </hint>
    </hints>
   </connection>
@@ -3577,12 +3750,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>79</y>
+     <x>566</x>
+     <y>489</y>
     </hint>
     <hint type="destinationlabel">
-     <x>195</x>
-     <y>79</y>
+     <x>350</x>
+     <y>492</y>
     </hint>
    </hints>
   </connection>
@@ -3593,12 +3766,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>195</x>
-     <y>68</y>
+     <x>218</x>
+     <y>313</y>
     </hint>
     <hint type="destinationlabel">
-     <x>257</x>
-     <y>68</y>
+     <x>280</x>
+     <y>313</y>
     </hint>
    </hints>
   </connection>
@@ -3609,12 +3782,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>68</y>
+     <x>280</x>
+     <y>313</y>
     </hint>
     <hint type="destinationlabel">
-     <x>195</x>
-     <y>68</y>
+     <x>218</x>
+     <y>313</y>
     </hint>
    </hints>
   </connection>
@@ -3625,12 +3798,12 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>393</x>
-     <y>289</y>
+     <x>461</x>
+     <y>277</y>
     </hint>
     <hint type="destinationlabel">
-     <x>492</x>
-     <y>292</y>
+     <x>524</x>
+     <y>279</y>
     </hint>
    </hints>
   </connection>
@@ -3641,12 +3814,44 @@ p, li { white-space: pre-wrap; }
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>480</x>
-     <y>299</y>
+     <x>524</x>
+     <y>279</y>
     </hint>
     <hint type="destinationlabel">
-     <x>301</x>
-     <y>297</y>
+     <x>453</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_PaintpackNumberOfLeds</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_PaintpackNumberOfLeds</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>384</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>535</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_PaintpackNumberOfLeds</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider_PaintpackNumberOfLeds</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>544</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>465</x>
+     <y>337</y>
     </hint>
    </hints>
   </connection>
