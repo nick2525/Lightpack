@@ -12,8 +12,8 @@
 # brunql@brunql-desktop:~$ lsusb -d 3eb:204f -v
 #
 
-# Lightpack (lightpack.googlecode.com)
-SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="03eb", ATTR{idProduct}=="204f", GROUP="users", MODE="0666"
+# PaintPack
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="0e8f", ATTR{idProduct}=="0025", GROUP="users", MODE="0666"
 
 # Atmel Flip DFU
 SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="03eb", ATTR{idProduct}=="2ffa", GROUP="users", MODE="0666"
